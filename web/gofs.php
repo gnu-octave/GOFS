@@ -17,8 +17,8 @@ $f = $_POST["function"];
 
 // functionality
 if (strlen($f) == 0) die('No Input was given');
-if (!preg_match('/^[a-zA-Z_0-9]+$/i',$f)) die('Illegal characters');
 if (strlen($f) > 64) die('Input is to long');
+if (!preg_match('/^[a-zA-Z_0-9]+$/i',$f)) die('Illegal characters');
 
 	$q = "SELECT host, package FROM fs WHERE func='$f'";
 	$db = new SQLite3($dbfile);
